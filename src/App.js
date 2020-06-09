@@ -25,6 +25,16 @@ function App() {
     setAwayScore(awayScore + 3)
   }
 
+function updateScore(team, score){
+  
+    if(team === 'Home'){
+      debugger
+      setHomeScore(homeScore + score)
+    } else if(team === 'Away'){
+      setAwayScore(awayScore + score)
+    }
+  }
+
   return (
     <div className="container">
       <section className="scoreboard">
@@ -43,7 +53,8 @@ function App() {
         </div>
         <BottomRow />
       </section>
-      <Buttons homeFieldGoal={homeFieldGoal} awayFieldGoal={awayFieldGoal} homeTouchdown={homeTouchdown} awayTouchdown={awayTouchdown} />
+      {/* <Buttons homeFieldGoal={homeFieldGoal} awayFieldGoal={awayFieldGoal} homeTouchdown={homeTouchdown} awayTouchdown={awayTouchdown} /> */}
+      <Buttons updateScore={updateScore} />
     </div>
   );
 }
